@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* ── Brand ── */
+  --color-primary:   #0047b3;
+  --color-secondary: #11b7ff;
+
+  /* ── Neutrals ── */
+  --color-dark:      #0f172a;
+  --color-body:      #475569;
+  --color-muted:     #94a3b8;
+  --color-border:    #e2e8f0;
+
+  /* ── Surfaces ── */
+  --color-white:     #ffffff;
+  --color-surface:   #f8fafc;
+
+  /* ── States ── */
+  --color-success:   #22c55e;
+  --color-warning:   #f59e0b;
+  --color-error:     #ef4444;
+
+  /* ── Typography ── */
+  --font-body:       'Inter', sans-serif;
+
+  /* ── Spacing ── */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* ── Radius ── */
+  --radius-sm:   6px;
+  --radius-md:  10px;
+  --radius-lg:  16px;
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 2px 8px rgba(0,71,179,0.08);
+  --shadow-md: 0 8px 24px rgba(0,71,179,0.12);
+  --shadow-lg: 0 20px 48px rgba(0,71,179,0.16);
+
+  /* ── Legacy aliases ── */
+  --primary:  var(--color-primary);
+  --secondary: var(--color-secondary);
+  --text:     var(--color-dark);
+  --shadow:   var(--shadow-md);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-white);
+  overflow-x: hidden;
+}

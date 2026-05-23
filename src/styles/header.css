@@ -1,0 +1,168 @@
+/* =========================
+   MIDCODERS HEADER
+========================= */
+
+.mc-header {
+  position: fixed;           /* ← fixed, not sticky */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0, 71, 179, 0.08);
+
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+/* SCROLLED STATE */
+.mc-header.scrolled {
+  background: #0047b3;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: none;
+}
+
+/* Links go white when scrolled */
+.mc-header.scrolled .mc-link {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.mc-header.scrolled .mc-link:hover {
+  color: #fff;
+}
+
+/* Underline stays white */
+.mc-header.scrolled .mc-link::after {
+  background: #fff;
+}
+
+/* Button inverts on scrolled */
+.mc-header.scrolled .mc-btn {
+  background: #fff;
+  color: #0047b3;
+}
+
+.mc-header.scrolled .mc-btn:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+/* Hamburger lines go white */
+.mc-header.scrolled .mc-hamburger span {
+  background: #fff;
+}
+
+/* CONTAINER */
+.mc-container {
+  width: 92%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+/* LOGO */
+.mc-logo { display: flex; align-items: center; }
+.mc-logo-img { height: 60px; width: auto; object-fit: contain; }
+
+/* NAV */
+.mc-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* LINKS */
+.mc-link {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  white-space: nowrap;
+  position: relative;
+  transition: color 0.25s ease;
+   text-decoration: none; 
+}
+
+.mc-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.mc-link:hover { color: var(--primary); }
+.mc-link:hover::after { width: 100%; }
+
+/* BUTTON */
+.mc-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: var(--primary);   /* ← solid, no gradient */
+  color: white;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.mc-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 71, 179, 0.2);
+}
+
+/* HAMBURGER */
+.mc-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.mc-hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+
+.mc-hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
+.mc-hamburger.open span:nth-child(2) { opacity: 0; }
+.mc-hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .mc-hamburger { display: flex; }
+
+  .mc-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 80px 30px;
+    gap: 20px;
+    transition: right 0.35s ease;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+  }
+
+  /* Mobile nav always uses dark links regardless of scroll */
+  .mc-header.scrolled .mc-nav .mc-link { color: var(--text); }
+  .mc-header.scrolled .mc-nav .mc-link:hover { color: var(--primary); }
+  .mc-header.scrolled .mc-nav .mc-btn { background: var(--primary); color: white; }
+
+  .mc-nav.active { right: 0; }
+  .mc-btn { width: 100%; }
+}
+
+body { overflow-x: hidden; }
+body.menu-open { overflow: hidden; }
