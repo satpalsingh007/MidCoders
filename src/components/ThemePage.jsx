@@ -1,7 +1,7 @@
 import { useState } from "react";
 const colors = [
   // Brand
-  { name: "Primary",   variable: "--color-primary",   hex: "#0047b3", group: "Brand" },
+  { name: "Primary",   variable: "--color-primary",   hex: "#013d96", group: "Brand" },
   { name: "Secondary", variable: "--color-secondary",  hex: "#11b7ff", group: "Brand" },
 
   // Neutrals

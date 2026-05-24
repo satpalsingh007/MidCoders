@@ -1,0 +1,243 @@
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.ct-section {
+  background: var(--color-white, #ffffff);
+  padding: 100px 0;
+}
+
+.ct-wrapper {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── LEFT ── */
+
+.ct-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary, #013d96);
+  background: rgba(1, 61, 150, 0.07);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.ct-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-dark, #0f172a);
+  margin-bottom: 20px;
+}
+
+.ct-accent {
+  color: var(--color-primary, #013d96);
+}
+
+.ct-body {
+  font-size: 15px;
+  color: var(--color-body, #475569);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+/* CONTACT DETAILS */
+.ct-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ct-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ct-detail-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(1, 61, 150, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary, #013d96);
+  flex-shrink: 0;
+}
+
+.ct-detail-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ct-detail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ct-detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted, #94a3b8);
+}
+
+.ct-detail-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-dark, #0f172a);
+}
+
+.ct-detail-link {
+  text-decoration: none;
+  color: var(--color-dark, #0f172a);
+  transition: color 0.2s ease;
+}
+
+.ct-detail-link:hover {
+  color: var(--color-primary, #013d96);
+}
+
+
+
+/* ── RIGHT FORM ── */
+
+.ct-form-card {
+  background: var(--color-white, #fff);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 16px 48px rgba(1, 61, 150, 0.08);
+}
+
+.ct-form-heading {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-dark, #0f172a);
+  margin-bottom: 6px;
+}
+
+.ct-form-sub {
+  font-size: 13px;
+  color: var(--color-muted, #94a3b8);
+  margin-bottom: 28px;
+}
+
+.ct-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ct-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ct-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-dark, #0f172a);
+  letter-spacing: 0.02em;
+}
+
+.ct-input {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  color: var(--color-dark, #0f172a);
+  background: var(--color-surface, #f8fafc);
+  border: 1px solid var(--color-border, #e2e8f0);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ct-input::placeholder {
+  color: var(--color-muted, #94a3b8);
+}
+
+.ct-input:focus {
+  border-color: var(--color-primary, #013d96);
+  box-shadow: 0 0 0 3px rgba(1, 61, 150, 0.08);
+  background: var(--color-white, #fff);
+}
+
+.ct-textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+/* SUBMIT */
+.ct-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 14px;
+  background: var(--color-primary, #013d96);
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+.ct-submit svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ct-submit:hover {
+  background: #012d6e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(1, 61, 150, 0.25);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .ct-wrapper {
+    grid-template-columns: 1fr;
+    gap: 52px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ct-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ct-form-card {
+    padding: 28px 20px;
+  }
+}

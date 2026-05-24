@@ -1,0 +1,371 @@
+/* ============================================
+   BLOG PAGE STYLES
+   (mirrors solutions.css patterns)
+   ============================================ */
+
+.blp-page {
+  background: var(--color-white);
+}
+
+.blp-section {
+  padding: 5rem 0;
+}
+
+.blp-bg-surface {
+  background: var(--color-surface);
+}
+
+/* ── Hero ── */
+.blp-hero {
+  padding: 10rem 0 5rem;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.blp-breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+}
+
+.blp-breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.blp-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  letter-spacing: -0.03em;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.blp-hero-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ── Section Headers ── */
+.blp-section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+}
+
+.blp-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blp-section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.blp-section-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+}
+
+/* ── Split Grid (Featured layout) ── */
+.blp-split-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.blp-split-grid > div {
+  flex: 1;
+  width: 100%;
+}
+
+/* When .blp-section-tag sits inline (not in a centered header), reset its margin context */
+.blp-split-grid .blp-section-tag {
+  margin-bottom: 1.25rem;
+}
+
+.blp-pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.blp-pill-list li {
+  padding: 0.5rem 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-body);
+}
+
+.blp-button-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ── Panels (Featured side panel) ── */
+.blp-panel {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.blp-panel-highlight {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.blp-panel-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: inherit;
+}
+
+.blp-panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--color-muted);
+}
+
+.blp-panel-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.blp-panel-list li::before {
+  content: '→';
+  color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-weight: 700;
+}
+
+.blp-stat-number {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.blp-stat-label {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  line-height: 1.4;
+}
+
+/* ── Category Filter Chips ── */
+.blp-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.blp-category-chip {
+  padding: 0.55rem 1.1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-body);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.blp-category-chip:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.blp-category-chip.is-active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ── Card Grid (mirrors .sol-package-grid) ── */
+.blp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* Card (mirrors .sol-package-card) */
+.blp-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.blp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Featured card variant (mirrors .sol-package-card.highlight) */
+.blp-card.is-featured {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.blp-card.is-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  z-index: 1;
+}
+
+/* Image */
+.blp-card-image-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+.blp-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.blp-card:hover .blp-card-image {
+  transform: scale(1.04);
+}
+
+/* Body */
+.blp-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Mirrors .sol-package-label */
+.blp-card-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.blp-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+  line-height: 1.3;
+}
+
+.blp-card-text {
+  color: var(--color-body);
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+  line-height: 1.6;
+}
+
+.blp-card-meta {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+}
+
+.blp-card-link {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  align-self: flex-start;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.blp-card-link:hover {
+  transform: translateX(4px);
+}
+
+/* ── Empty state ── */
+.blp-empty {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.blp-empty p {
+  color: var(--color-body);
+  font-size: 1.05rem;
+}
+
+/* ── Mobile Overrides ── */
+@media (max-width: 768px) {
+  .blp-split-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .blp-hero {
+    padding: 7rem 0 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-2xl);
+  }
+}

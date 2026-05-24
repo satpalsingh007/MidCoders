@@ -30,7 +30,7 @@ const cards = [
 
 const CrmSection = () => {
   return (
-    <section className="crm-section">
+    <section className="crm-section" id="crm-section">
 
       {/* subtle grid texture */}
       <div className="crm-grid-bg" aria-hidden="true" />

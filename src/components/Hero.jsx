@@ -29,9 +29,9 @@ const Hero = () => {
 
           <div className="hero-buttons">
 
-            <Link to="/contact" className="btn btn-primary">
+            <a href="#contact-section" className="btn btn-primary">
               Talk CRM Strategy
-            </Link>
+            </a>
 
             <Link to="/solutions" className="btn btn-secondary">
               Explore Solutions

@@ -2,7 +2,7 @@
 
 :root {
   /* ── Brand ── */
-  --color-primary:   #0047b3;
+  --color-primary:   #013d96;
   --color-secondary: #11b7ff;
 
   /* ── Neutrals ── */
@@ -37,9 +37,16 @@
   --radius-lg:  16px;
 
   /* ── Shadows ── */
-  --shadow-sm: 0 2px 8px rgba(0,71,179,0.08);
-  --shadow-md: 0 8px 24px rgba(0,71,179,0.12);
-  --shadow-lg: 0 20px 48px rgba(0,71,179,0.16);
+/* Layered shadows create a much more natural, high-end depth */
+  --shadow-sm: 0 1px 2px rgba(1, 61, 150, 0.04), 
+               0 2px 4px rgba(1, 61, 150, 0.04);
+               
+  --shadow-md: 0 2px 8px rgba(1, 61, 150, 0.04), 
+               0 8px 24px rgba(1, 61, 150, 0.06);
+               
+  --shadow-lg: 0 4px 12px rgba(1, 61, 150, 0.04), 
+               0 16px 40px rgba(1, 61, 150, 0.08),
+               0 24px 64px rgba(1, 61, 150, 0.12);
 
   /* ── Legacy aliases ── */
   --primary:  var(--color-primary);
@@ -66,3 +73,34 @@ body {
   background: var(--color-white);
   overflow-x: hidden;
 }
+
+/* ── Mobile Padding Fix ── */
+@media (max-width: 768px) {
+  .mc-container,
+  .container,
+  [class$="-wrapper"], /* Catches crm-wrapper, pf-wrapper, abt-wrapper, etc. */
+  .tp-page {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+}
+
+/* Tighten large headings for a premium, compact look */
+h1, .hero-title {
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+h2, .crm-title, .pf-title {
+  letter-spacing: -0.03em;
+}
+
+/* Loosen uppercase tags/labels to make them highly legible */
+.crm-tag, .pf-tag, .svc-tag {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+

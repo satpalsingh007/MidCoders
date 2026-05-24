@@ -83,7 +83,7 @@
   display: block;
 }
 
-.highlight {
+.hero-title .highlight {
   background: linear-gradient(135deg, #0047b3, #11b7ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -109,7 +109,7 @@
 
 /* PRIMARY — solid, no gradient */
 .btn-primary {
-  background: #0047b3;
+  background: #013d96;
   color: white;
   padding: 0.9rem 2rem;
   border-radius: 10px;
@@ -119,15 +119,15 @@
 }
 
 .btn-primary:hover {
-  background: #003a96;    /* slightly darker on hover */
+  background: #004bc2;    /* slightly darker on hover */
   transform: translateY(-3px);
 }
 
 /* SECONDARY */
 .btn-secondary {
   background: transparent;
-  border: 1px solid #0047b3;
-  color: #0047b3;
+  border: 1px solid #013d96;
+  color: #013d96;
   padding: 0.9rem 2rem;
   border-radius: 10px;
   font-weight: 600;
@@ -136,7 +136,7 @@
 }
 
 .btn-secondary:hover {
-  background: #0047b3;
+  background: #013d96;
   color: white;
 }
 
@@ -163,7 +163,7 @@
   50% { transform: translateY(10px); }
 }
 /* Remove gradient text, solid color instead */
-.highlight {
-  color: #0047b3;
-  -webkit-text-fill-color: #0047b3;
+.hero-title .highlight{
+  color: #013d96;
+  -webkit-text-fill-color: #013d96;
 }

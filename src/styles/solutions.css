@@ -1,0 +1,337 @@
+/* ============================================
+   SOLUTIONS PAGE STYLES
+   ============================================ */
+.container {
+  /* width: 100%; */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md); /* Ensures it never touches the screen edges */
+}
+.sol-page {
+  background: var(--color-white);
+}
+
+.sol-section {
+  padding: 5rem 0;
+}
+
+.sol-bg-surface {
+  background: var(--color-surface);
+}
+
+/* ── Hero ── */
+.sol-hero {
+  padding: 10rem 0 5rem;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.sol-breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+}
+
+.sol-breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sol-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  letter-spacing: -0.03em;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.sol-hero-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.sol-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Section Headers ── */
+.sol-section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.sol-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.sol-section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.sol-section-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+}
+
+/* ── Package Grid ── */
+.sol-package-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.sol-package-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* ADD THESE TWO LINES */
+  position: relative;
+  overflow: hidden;
+}
+
+.sol-package-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.sol-package-card.highlight {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+
+.sol-package-card.highlight::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.sol-package-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.sol-package-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-dark);
+}
+
+.sol-package-text {
+  color: var(--color-body);
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Pushes button to bottom */
+}
+
+.sol-package-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  color: var(--color-body);
+}
+
+.sol-package-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.sol-package-list li::before {
+  content: '✓';
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+/* ── Split Grid & Panels ── */
+/* ── Split Grid & Panels (Flexbox Version) ── */
+.sol-split-grid {
+  display: flex;
+  flex-direction: row; /* Side-by-side on desktop */
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Force the two child elements to take up equal halves (simulating 1fr 1fr) */
+.sol-split-grid > div {
+  flex: 1;
+  width: 100%; 
+}
+
+.sol-pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.sol-pill-list li {
+  padding: 0.5rem 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-body);
+}
+
+.sol-panel {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.sol-panel-highlight {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.sol-panel-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: inherit;
+}
+
+.sol-panel-desc {
+  color: var(--color-body);
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.sol-panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--color-muted);
+}
+
+.sol-panel-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sol-panel-list li::before {
+  content: '→';
+  color: var(--color-secondary);
+}
+
+.sol-logo-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sol-logo-cloud span {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-dark);
+}
+
+/* ── Timeline ── */
+.sol-timeline {
+  border-left: 2px solid var(--color-border);
+  margin: 0 auto;
+  max-width: 800px;
+  padding-left: 2rem;
+}
+
+.sol-timeline-item {
+  position: relative;
+  padding-bottom: 3rem;
+}
+
+.sol-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.sol-timeline-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  position: absolute;
+  left: -2.6rem; /* aligns with the border */
+  top: 6px;
+  border: 4px solid var(--color-white);
+  box-shadow: 0 0 0 1px var(--color-border);
+}
+
+.sol-timeline-title {
+  font-size: 1.25rem;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+}
+
+.sol-timeline-text {
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+/* ── Mobile Overrides ── */
+@media (max-width: 768px) {
+  .sol-split-grid {
+    flex-direction: column; /* Stacks them vertically on smaller screens */
+    gap: 3rem;
+  }
+  
+  .sol-timeline {
+    padding-left: 1.5rem;
+  }
+  
+  .sol-timeline-dot {
+    left: -1.95rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-2xl);
+  }
+}

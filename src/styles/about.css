@@ -1,0 +1,303 @@
+/* ============================================
+   ABOUT PAGE STYLES
+   ============================================ */
+
+.abp-page {
+  background: var(--color-white);
+}
+
+.abp-section {
+  padding: 5rem 0;
+}
+
+.abp-bg-surface {
+  background: var(--color-surface);
+}
+
+/* ── Hero ── */
+.abp-hero {
+  padding: 10rem 0 5rem;
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.abp-breadcrumb {
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-muted);
+}
+
+.abp-breadcrumb a {
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.abp-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin-bottom: 1.5rem;
+  color: var(--color-dark);
+  letter-spacing: -0.03em;
+  max-width: 800px;
+  margin-inline: auto;
+}
+
+.abp-hero-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+}
+
+.abp-hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Section Headers ── */
+.abp-section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.abp-section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-surface);
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.abp-section-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+}
+
+.abp-section-desc {
+  font-size: 1.125rem;
+  color: var(--color-body);
+}
+
+.abp-section-text {
+  color: var(--color-body);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+}
+
+/* ── Split Grid ── */
+.abp-split-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.abp-split-grid > div {
+  flex: 1;
+  width: 100%;
+}
+
+/* ── Panels ── */
+.abp-panel {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.abp-panel-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.abp-panel-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--color-dark);
+}
+
+.abp-panel-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  color: var(--color-body);
+}
+
+.abp-panel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.abp-panel-list li::before {
+  content: '✓';
+  color: var(--color-success);
+  font-weight: bold;
+}
+
+.abp-panel-highlight {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  max-height: min-content;
+  box-shadow: var(--shadow-lg);
+}
+
+.abp-panel-highlight .abp-panel-title {
+  color: var(--color-white);
+}
+
+.abp-panel-highlight .abp-panel-list {
+  color: var(--color-muted);
+}
+
+.abp-panel-highlight .abp-panel-list li::before {
+  content: '→';
+  color: var(--color-secondary);
+}
+
+/* ── Stats ── */
+.abp-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  text-align: center;
+}
+
+.abp-stat-item {
+  padding: 2.5rem 1.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.abp-stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.abp-stat-number {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.abp-stat-label {
+  font-size: 0.875rem;
+  color: var(--color-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+/* ── Values ── */
+.abp-value-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.abp-value-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.abp-value-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.abp-value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.abp-value-card:hover::before {
+  opacity: 1;
+}
+
+.abp-value-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-dark);
+}
+
+.abp-value-text {
+  color: var(--color-body);
+  line-height: 1.6;
+}
+
+/* ── Pill list ── */
+.abp-pill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.abp-pill-list li {
+  padding: 0.5rem 1rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--color-body);
+}
+
+/* ── Mobile Overrides ── */
+@media (max-width: 768px) {
+  .abp-split-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .abp-panel-split {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .abp-hero {
+    padding: 7rem 0 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-2xl);
+  }
+}

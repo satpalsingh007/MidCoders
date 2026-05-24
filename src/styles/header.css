@@ -11,16 +11,17 @@
 
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(0, 71, 179, 0.08);
-
-  transition: background 0.3s ease, border-color 0.3s ease;
+  /* border-bottom: 1px solid rgba(0, 71, 179, 0.08); */
+background: transparent;
+  transition: background 0.3s ease, border-bottom 0.3s ease;
 }
 
 /* SCROLLED STATE */
 .mc-header.scrolled {
-  background: #0047b3;
+  background: #013d96;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: none;
+  
 }
 
 /* Links go white when scrolled */
@@ -40,7 +41,7 @@
 /* Button inverts on scrolled */
 .mc-header.scrolled .mc-btn {
   background: #fff;
-  color: #0047b3;
+  color: #013d96;
 }
 
 .mc-header.scrolled .mc-btn:hover {
@@ -65,7 +66,12 @@
 
 /* LOGO */
 .mc-logo { display: flex; align-items: center; }
-.mc-logo-img { height: 60px; width: auto; object-fit: contain; }
+.mc-logo a {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.mc-logo-img { height: 60px; width: auto; object-fit: contain;background-color: #013d96; }
 
 /* NAV */
 .mc-nav {
@@ -142,26 +148,58 @@
 
   .mc-nav {
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 280px;
-    height: 100vh;
+    top: 60px;              /* ← starts right below the 60px header */
+    right: 0;
+    left: -100%;            /* ← slides in from left, full width */
+    width: 100%;            /* ← full width */
+    height: calc(100vh - 60px);
+
     background: white;
+
     flex-direction: column;
-    align-items: flex-start;
-    padding: 80px 30px;
-    gap: 20px;
-    transition: right 0.35s ease;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+    align-items: center;    /* ← centered */
+    /* justify-content: center; */
+
+    padding-top: 50px;
+    gap: 28px;
+
+    transition: left 0.35s ease;
+    box-shadow: none;
   }
 
-  /* Mobile nav always uses dark links regardless of scroll */
-  .mc-header.scrolled .mc-nav .mc-link { color: var(--text); }
-  .mc-header.scrolled .mc-nav .mc-link:hover { color: var(--primary); }
-  .mc-header.scrolled .mc-nav .mc-btn { background: var(--primary); color: white; }
+  .mc-nav.active {
+    left: 0;                /* ← slides in */
+  }
 
-  .mc-nav.active { right: 0; }
-  .mc-btn { width: 100%; }
+  /* Links centered and bigger on mobile */
+  .mc-nav .mc-link {
+    font-size: 18px;
+    color: var(--color-dark, #0f172a);
+  }
+
+  .mc-nav .mc-link:hover {
+    color: var(--color-primary, #013d96);
+  }
+
+  /* Button full width but constrained */
+  .mc-btn {
+    width: 200px;
+    text-align: center;
+  }
+
+  /* Scrolled state — mobile nav links always dark (menu is white) */
+  .mc-header.scrolled .mc-nav .mc-link {
+    color: var(--color-dark, #0f172a);
+  }
+
+  .mc-header.scrolled .mc-nav .mc-link:hover {
+    color: var(--color-primary, #013d96);
+  }
+
+  .mc-header.scrolled .mc-nav .mc-btn {
+    background: var(--color-primary, #013d96);
+    color: white;
+  }
 }
 
 body { overflow-x: hidden; }

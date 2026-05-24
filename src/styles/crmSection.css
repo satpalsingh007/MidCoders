@@ -17,6 +17,7 @@
   background-size: 28px 28px;
   opacity: 0.45;
   pointer-events: none;
+  
 }
 
 /* LAYOUT */
@@ -40,7 +41,7 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-primary, #0047b3);
+  color: var(--color-primary, #013d96);
   background: rgba(0, 71, 179, 0.08);
   padding: 6px 14px;
   border-radius: 999px;
@@ -56,7 +57,7 @@
 }
 
 .crm-accent {
-  color: var(--color-primary, #0047b3);
+  color: var(--color-primary, #013d96);
 }
 
 .crm-desc {
@@ -88,7 +89,7 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--color-primary, #0047b3);
+  background: var(--color-primary, #013d96);
   margin-top: 6px;
 }
 
@@ -141,7 +142,7 @@
   display: block;
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--color-primary, #0047b3);
+  color: var(--color-primary, #013d96);
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -174,7 +175,7 @@
 }
 
 .crm-card--highlight {
-  background: var(--color-primary, #0047b3);
+  background: var(--color-primary, #013d96);
   border-color: transparent;
   color: white;
   box-shadow: 0 20px 48px rgba(0, 71, 179, 0.28);
@@ -231,7 +232,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-primary, #0047b3);
+  background: var(--color-primary, #013d96);
 }
 
 .crm-card--highlight .crm-card-list li {
@@ -268,3 +269,4 @@
     border-bottom: none;
   }
 }
+

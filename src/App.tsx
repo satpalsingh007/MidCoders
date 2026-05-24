@@ -3,21 +3,47 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import ThemePage from './components/ThemePage'
 import CrmSection from './components/CrmSection'
+import ServicesSection from './components/ServicesSection'
+import AboutSection from './components/AboutSection'
+import PortfolioSection from './components/PortfolioSection'
+import BlogSection from './components/BlogSection'
+import ContactSection from './components/ContactSection'
+import Footer from './components/Footer'
+import ScrollToTop from './components/ScrollToTop'
+import Solutions from './components/Solutions'
+import About from './components/About'
+import Blog from './components/Blog'
+import BlogAi from './components/BlogAi'
+import BlogCRMKeepingUp from './components/BlogCRMKeepingUp'
+import BlogSugarCRMReview from './components/BlogSugarCRMReview'
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Header />
       <Routes>
         <Route path="/" element={
            <>
             <Hero />
             <CrmSection />
+            <ServicesSection />
+            <AboutSection />
+            <PortfolioSection />
+            <BlogSection />
+            <ContactSection />
           </>
         } />
         <Route path="/theme" element={<ThemePage />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/blog-ai" element={<BlogAi />} />
+        <Route path="/blog/blog-crm-keeping-up" element={<BlogCRMKeepingUp />} />
+        <Route path="/blog/blog-sugarcrm-review" element={<BlogSugarCRMReview />} />
         {/* your other routes */}
       </Routes>
+       <Footer />
     </Router>
   )
 }
