@@ -78,7 +78,7 @@ const CrmSection = () => {
 
           <div className="crm-cta">
             <Link to="/solutions" className="btn btn-primary">Explore CRM Solutions</Link>
-            <Link to="/blog"      className="btn btn-secondary">See CRM Playbook</Link>
+            <Link to="/blog/blog-crm-keeping-up" className="btn btn-secondary">See CRM Playbook</Link>
           </div>
 
           <div className="crm-metrics">

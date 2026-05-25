@@ -265,7 +265,7 @@
 /* Image */
 .blp-card-image-wrap {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background: var(--color-surface);
 }
@@ -273,7 +273,7 @@
 .blp-card-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }

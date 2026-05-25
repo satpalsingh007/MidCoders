@@ -43,18 +43,19 @@
 
 .bpd-image-wrap {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   box-shadow: var(--shadow-md);
-  margin-bottom: 2rem;
 }
 
 .bpd-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -275,7 +276,7 @@
 .bpd-related-image-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   background: var(--color-surface);
 }
@@ -283,7 +284,7 @@
 .bpd-related-image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   transition: transform 0.4s ease;
 }
