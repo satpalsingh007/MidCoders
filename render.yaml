@@ -1,6 +1,13 @@
 services:
-  - type: static_site
+  - type: web
+    runtime: static
     name: midcoders
-    env: node
     buildCommand: npm install && npm run build
-    publishPath: dist
+    staticPublishPath: ./dist
+    routes:
+      # Send every URL to index.html so React Router can handle client-side
+      # routing (fixes "Page not found" on direct visits / refreshes of
+      # /solutions, /about, /blog, /blog/blog-ai, etc.).
+      - type: rewrite
+        source: /*
+        destination: /index.html
