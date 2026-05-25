@@ -107,6 +107,7 @@ background: transparent;
 
 /* BUTTON */
 .mc-btn {
+  display: inline-block;
   padding: 10px 18px;
   border-radius: 8px;
   border: none;
@@ -114,6 +115,9 @@ background: transparent;
   background: var(--primary);   /* ← solid, no gradient */
   color: white;
   font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.2;
   transition: all 0.25s ease;
 }
 

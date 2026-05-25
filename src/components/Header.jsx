@@ -69,8 +69,13 @@ const Header = () => {
           <Link to="/about" className="mc-link">About</Link>
           <a href="#portfolio-section" onClick={(e) => handleSmoothScroll(e, "portfolio-section")} className="mc-link">Portfolio</a>
           <Link to="/blog" className="mc-link">Blog</Link>
-          <a href="#contact-section" onClick={(e) => handleSmoothScroll(e, "contact-section")} className="mc-link">Contact</a>
-          <button className="mc-btn">Get Started</button>
+          <a
+            href="#contact-section"
+            onClick={(e) => handleSmoothScroll(e, "contact-section")}
+            className="mc-btn"
+          >
+            Contact
+          </a>
         </nav>
 
         <div
