@@ -56,7 +56,11 @@ const BlogSection = () => {
               style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* IMAGE */}
-              <Link to={post.href} className="bl-image-wrap">
+              <Link
+                to={post.href}
+                className="bl-image-wrap"
+                aria-label={`Read article: ${post.title}`}
+              >
                 <img
                   src={post.image}
                   alt={post.title}
@@ -92,9 +96,13 @@ const BlogSection = () => {
                 <h3 className="bl-post-title">{post.title}</h3>
                 <p className="bl-excerpt">{post.excerpt}</p>
 
-                <Link to={post.href} className="bl-link">
+                <Link
+                  to={post.href}
+                  className="bl-link"
+                  aria-label={`Read more: ${post.title}`}
+                >
                   Read More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden="true">
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
                 </Link>

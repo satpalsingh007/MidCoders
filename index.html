@@ -17,21 +17,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/src/styles/header.css" />
-    <link rel="stylesheet" href="/src/styles/hero.css" />
-    <link rel="stylesheet" href="/src/styles/theme-page.css" />
-    <link rel="stylesheet" href="/src/styles/crmSection.css" />
-    <link rel="stylesheet" href="/src/styles/serviceSection.css" />
-    <link rel="stylesheet" href="/src/styles/aboutSection.css" />
-    <link rel="stylesheet" href="/src/styles/portfolioSection.css" />
-    <link rel="stylesheet" href="/src/styles/blogSection.css" />
-    <link rel="stylesheet" href="/src/styles/contactSection.css" />
-    <link rel="stylesheet" href="/src/styles/footer.css" />
-    <link rel="stylesheet" href="/src/styles/solutions.css" />
-    <link rel="stylesheet" href="/src/styles/about.css" />
-    <link rel="stylesheet" href="/src/styles/blog.css" />
-    <link rel="stylesheet" href="/src/styles/blogPost.css" />
+    <!--
+      Stylesheets are now imported from src/main.jsx so Vite can bundle them
+      into a single optimized CSS chunk (eliminates the previous waterfall of
+      14 separate render-blocking <link> requests).
+    -->
   </head>
   <body>
     <div id="root"></div>
