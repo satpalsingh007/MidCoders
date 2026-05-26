@@ -1,0 +1,20 @@
+# Apache config for Single Page App routing.
+# Used by Apache-based hosts (Hostinger, cPanel, Bluehost, GoDaddy shared, etc.).
+# Render and other CDN-style hosts ignore this file, so it's safe to ship everywhere.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Don't rewrite the index file itself.
+  RewriteRule ^index\.html$ - [L]
+
+  # Don't rewrite real files or directories (CSS, JS, images, fonts, etc.).
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+
+  # Send everything else to index.html so React Router can take over
+  # (fixes "Page not found" on direct visits / refreshes of /solutions,
+  # /about, /blog, /blog/blog-ai, etc.).
+  RewriteRule . /index.html [L]
+</IfModule>
