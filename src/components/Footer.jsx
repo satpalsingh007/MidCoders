@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo-small.png";
 
 const quickLinks = [
   { label: "Home",      to: "/" },
@@ -55,7 +55,15 @@ const Footer = () => {
           {/* BRAND */}
           <div className="ft-brand">
             <Link to="/">
-              <img src={Logo} alt="Midcoders" className="ft-logo" />
+              <img
+                src={Logo}
+                alt="Midcoders"
+                className="ft-logo"
+                width="88"
+                height="44"
+                loading="lazy"
+                decoding="async"
+              />
             </Link>
             <p className="ft-brand-desc">
               We design cutting-edge CRM solutions, software, and websites

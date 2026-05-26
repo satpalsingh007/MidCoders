@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Logo from "../assets/Logo.png";
+import Logo from "../assets/Logo-small.png";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -58,7 +58,15 @@ const Header = () => {
 
         <div className="mc-logo">
           <Link to="/">
-            <img src={Logo} alt="Midcoders" className="mc-logo-img" />
+            <img
+              src={Logo}
+              alt="Midcoders"
+              className="mc-logo-img"
+              width="120"
+              height="60"
+              decoding="async"
+              fetchPriority="high"
+            />
           </Link>
         </div>
 
