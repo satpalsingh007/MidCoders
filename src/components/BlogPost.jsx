@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import Seo from "./Seo";
+import siteConfig from "../lib/siteConfig";
 import powerOfAiImg from "../assets/powerofai.webp";
 import crmKeepingImg from "../assets/crmkeeping.webp";
 import sugarCrmImg from "../assets/sugarcrm.webp";
@@ -19,6 +21,7 @@ export const BLOG_POSTS = [
     cardExcerpt: "How AI changes CRM analytics, automation, and support.",
     breadcrumb: "Unlock the Power of AI",
     date: "November 25, 2024",
+    publishedAt: "2024-11-25",
     readTime: "9 min read",
     image: powerOfAiImg,
     imageAlt: "Unlock the Power of AI blog thumbnail",
@@ -37,6 +40,7 @@ export const BLOG_POSTS = [
     cardExcerpt: "A checklist to evaluate your CRM strategy and modernize.",
     breadcrumb: "Is Your CRM Keeping Up?",
     date: "November 26, 2024",
+    publishedAt: "2024-11-26",
     readTime: "7 min read",
     image: crmKeepingImg,
     imageAlt: "Is Your CRM Keeping Up blog thumbnail",
@@ -55,6 +59,7 @@ export const BLOG_POSTS = [
     cardExcerpt: "A comprehensive review of SugarCRM's fit and trade-offs.",
     breadcrumb: "Is SugarCRM Any Good?",
     date: "November 24, 2024",
+    publishedAt: "2024-11-24",
     readTime: "6 min read",
     image: sugarCrmImg,
     imageAlt: "Is SugarCRM Any Good blog thumbnail",
@@ -92,8 +97,48 @@ const BlogPost = ({ slug, children }) => {
 
   const relatedPosts = BLOG_POSTS.filter((p) => p.slug !== slug);
 
+  const absoluteImage = `${siteConfig.url}${post.image}`;
+  const absoluteUrl = `${siteConfig.url}${post.href}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.cardExcerpt,
+    image: [absoluteImage],
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    author: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/android-chrome-512x512.png`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": absoluteUrl,
+    },
+    articleSection: post.category,
+  };
+
   return (
     <div className="bpd-page">
+      <Seo
+        title={post.cardTitle}
+        description={post.cardExcerpt}
+        path={post.href}
+        image={post.image}
+        type="article"
+        publishedTime={post.publishedAt}
+        jsonLd={articleJsonLd}
+      />
 
       <article className="bpd-article">
         <div className="container">

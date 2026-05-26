@@ -10,6 +10,8 @@ import BlogSection from './components/BlogSection'
 import ContactSection from './components/ContactSection'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
+import Seo from './components/Seo'
+import siteConfig from './lib/siteConfig'
 import Solutions from './components/Solutions'
 import About from './components/About'
 import Blog from './components/Blog'
@@ -25,6 +27,19 @@ function App() {
       <Routes>
         <Route path="/" element={
            <>
+            <Seo
+              path="/"
+              description="Midcoders is a CRM-first studio designing data-driven CRM ecosystems that connect marketing, sales, and support. Strategy, integrations, AI automation, and managed RevOps for SaaS, FinTech, Healthcare, and Education."
+              jsonLd={{
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                name: siteConfig.name,
+                url: siteConfig.url,
+                logo: `${siteConfig.url}/android-chrome-512x512.png`,
+                description: siteConfig.description,
+                sameAs: [],
+              }}
+            />
             <Hero />
             <CrmSection />
             <ServicesSection />

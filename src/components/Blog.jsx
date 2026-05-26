@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Seo from "./Seo";
 import powerOfAiImg from "../assets/powerofai.webp";
 import crmKeepingImg from "../assets/crmkeeping.webp";
 import sugarCrmImg from "../assets/sugarcrm.webp";
@@ -71,6 +72,11 @@ const Blog = () => {
 
   return (
     <div className="blp-page">
+      <Seo
+        title="Blog | Field Notes from Hundreds of CRM Launches"
+        description="Curated guidance on CRM strategy, RevOps, automation, integrations, change management, and building lovable CRM experiences. Playbooks and reviews from the Midcoders team."
+        path="/blog"
+      />
 
       {/* ── HERO SECTION ── */}
       <section className="blp-hero">

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Seo from "./Seo";
 
 const coreCapabilities = [
   {
@@ -65,6 +66,11 @@ const podCadence = [
 const About = () => {
   return (
     <div className="abp-page">
+      <Seo
+        title="About Midcoders | A People-First CRM Studio"
+        description="Midcoders is a CRM-first studio for modern revenue teams. We blend product thinking with RevOps discipline to ship CRM experiences that feel effortless—for your teams and your customers."
+        path="/about"
+      />
 
       {/* ── HERO SECTION ── */}
       <section className="abp-hero">

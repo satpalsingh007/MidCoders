@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
+import Seo from "./Seo";
 
 const Solutions = () => {
   return (
     <div className="sol-page">
-      
-      
+      <Seo
+        title="CRM Solutions & RevOps Programs"
+        description="End-to-end CRM programs that accelerate revenue. Strategy, design, build, and managed services for Salesforce, HubSpot, Dynamics 365, Zoho, Freshworks, and custom CRMs."
+        path="/solutions"
+      />
+
       {/* ── HERO SECTION ── */}
       <section className="sol-hero">
         

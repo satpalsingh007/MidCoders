@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Internal/preview routes — keep crawlers out
+Disallow: /theme
+
+# Sitemap (update host if you switch to a custom domain)
+Sitemap: https://midcoders.onrender.com/sitemap.xml
